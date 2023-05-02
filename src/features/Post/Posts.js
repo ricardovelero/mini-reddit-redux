@@ -28,7 +28,7 @@ const Post = ({ post, onToggleComments }) => {
         }
         if (post.showingComments) {
             return (
-                <div>
+                <div className="mt-8">
                     {post.comments.map((comment) => (
                         <Comment comment={comment} key={comment.id} />
                     ))}
@@ -55,7 +55,10 @@ const Post = ({ post, onToggleComments }) => {
                     />
                 </p>
                 <div className="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
-                    <Avatar name={post.author} />
+                    <Avatar
+                        name={post.author}
+                        className="h-10 w-10 rounded-full bg-gray-50 ring-2 ring-white"
+                    />
                     <div className="min-w-0 flex-auto">
                         <p className="text-sm font-semibold leading-6 text-gray-900">
                             {post.author}
