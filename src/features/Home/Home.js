@@ -65,15 +65,18 @@ const Home = () => {
     }
 
     return (
-        <>
-            {posts.map((post, index) => (
-                <Post
-                    key={post.id}
-                    post={post}
-                    onToggleComments={onToggleComments(index)}
-                />
-            ))}
-        </>
+        <div className="bg-white py-24 sm:py-32">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <ul className="space-y-3">
+                    {posts.map((post, index) => (
+                        <Post
+                            post={post}
+                            onToggleComments={onToggleComments(index)}
+                        />
+                    ))}
+                </ul>
+            </div>
+        </div>
     );
 };
 
