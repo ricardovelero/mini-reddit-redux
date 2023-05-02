@@ -1,11 +1,11 @@
 import React from "react";
 
-const Avatar = ({ name }) => {
+const Avatar = ({ name, className }) => {
     return (
         <img
-            src={`https://api.adorable.io/avatars/10/${name}`}
+            src={`https://api.dicebear.com/6.x/personas/svg?seed=${name}`}
             alt={`${name} profile`}
-            className="h-6 w-6 rounded-full bg-gray-50 ring-2 ring-white"
+            className={className}
         />
     );
 };
