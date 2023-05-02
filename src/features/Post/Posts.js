@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import moment from "moment";
 import Avatar from "../../components/avatar/Avatar";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import Comment from "../../components/comment/Comment";
 import shortenNumber from "../../utils/shortenNumber";
 import { ChatBubbleLeftRightIcon } from "@heroicons/react/20/solid";
@@ -14,7 +16,16 @@ const Post = ({ post, onToggleComments }) => {
                 </div>
             );
         }
-
+        if (post.loadingComments) {
+            return (
+                <div>
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                </div>
+            );
+        }
         if (post.showingComments) {
             return (
                 <div>
@@ -24,6 +35,7 @@ const Post = ({ post, onToggleComments }) => {
                 </div>
             );
         }
+
         return null;
     };
 
