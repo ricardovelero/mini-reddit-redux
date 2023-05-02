@@ -1,10 +1,32 @@
 import React, { useState } from "react";
 import moment from "moment";
 import Avatar from "../../components/avatar/Avatar";
+import Comment from "../../components/comment/Comment";
 import shortenNumber from "../../utils/shortenNumber";
 import { ChatBubbleLeftRightIcon } from "@heroicons/react/20/solid";
 
 const Post = ({ post, onToggleComments }) => {
+    const renderComments = () => {
+        if (post.errorComments) {
+            return (
+                <div>
+                    <h3>Error loading comments</h3>
+                </div>
+            );
+        }
+
+        if (post.showingComments) {
+            return (
+                <div>
+                    {post.comments.map((comment) => (
+                        <Comment comment={comment} key={comment.id} />
+                    ))}
+                </div>
+            );
+        }
+        return null;
+    };
+
     return (
         <li
             key={post.id}
@@ -45,6 +67,7 @@ const Post = ({ post, onToggleComments }) => {
                         {shortenNumber(post.num_comments, 1)}
                     </div>
                 </div>
+                {renderComments()}
             </div>
         </li>
     );
