@@ -24,7 +24,7 @@ const Header = () => {
 
     return (
         <header className="bg-white mt-4">
-            <div className="mx-auto max-w-7xl ml-6">
+            <div className="mx-auto max-w-7xl">
                 <Title />
                 <form
                     className="relative max-w-lg mx-auto"
