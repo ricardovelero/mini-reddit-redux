@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import moment from "moment";
 import Avatar from "../../components/avatar/Avatar";
+import shortenNumber from "../../utils/shortenNumber";
+import { ChatBubbleLeftRightIcon } from "@heroicons/react/20/solid";
 
 const Post = ({ post, onToggleComments }) => {
     return (
@@ -30,9 +32,20 @@ const Post = ({ post, onToggleComments }) => {
                             </time>
                         </p>
                     </div>
+                    <div>
+                        <button
+                            type="button"
+                            className={`cursor-pointer flex items-center p-0 ${
+                                post.showingComments && "showing-comments"
+                            }`}
+                            onClick={() => onToggleComments(post.permalink)}
+                            aria-label="Show comments">
+                            <ChatBubbleLeftRightIcon className="h-6 w-6 text-gray-500" />
+                        </button>
+                        {shortenNumber(post.num_comments, 1)}
+                    </div>
                 </div>
             </div>
-            <div></div>
         </li>
     );
 };
