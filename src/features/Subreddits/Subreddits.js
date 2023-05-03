@@ -14,6 +14,7 @@ function classNames(...classes) {
 
 export const Subreddits = () => {
     const [query, setQuery] = useState("");
+    const [display, setDisplay] = useState("");
     const dispatch = useDispatch();
     const subreddits = useSelector(selectSubreddits);
     const selectedSubreddit = useSelector(selectSelectedSubreddit);
@@ -33,6 +34,7 @@ export const Subreddits = () => {
               );
 
     const handleChange = (selected) => {
+        setDisplay(selected.title);
         dispatch(setSelectedSubreddit(selected.url));
     };
 
@@ -45,7 +47,7 @@ export const Subreddits = () => {
                 <div className="relative mt-1">
                     <Combobox.Input
                         className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        displayValue={(subreddit) => subreddit?.title}
+                        displayValue={display}
                         onChange={(event) => setQuery(event.target.value)}
                     />
                     <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
