@@ -47,6 +47,10 @@ const redditSlice = createSlice({
             state.posts[action.payload].loadingComments = false;
             state.posts[action.payload].error = true;
         },
+        setSelectedSubreddit(state, action) {
+            state.selectedSubreddit = action.payload;
+            state.searchTerm = "";
+        },
     },
 });
 
@@ -58,6 +62,7 @@ export const {
     startGetComments,
     getCommentsSuccess,
     getCommentsFailed,
+    setSelectedSubreddit,
 } = redditSlice.actions;
 
 export default redditSlice.reducer;
