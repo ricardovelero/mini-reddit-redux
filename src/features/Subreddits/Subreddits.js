@@ -32,9 +32,13 @@ export const Subreddits = () => {
                       .includes(query.toLowerCase().replace(/\s+/g, ""))
               );
 
+    const handleChange = (selected) => {
+        dispatch(setSelectedSubreddit(selected.url));
+    };
+
     return (
         <div className="ml-7 mb-7">
-            <Combobox value={selectedSubreddit} onChange={() => {}}>
+            <Combobox value={selectedSubreddit} onChange={handleChange}>
                 <Combobox.Label className="block text-sm font-medium leading-6 text-gray-900">
                     Select Subreddit:
                 </Combobox.Label>

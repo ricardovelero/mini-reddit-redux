@@ -29,7 +29,7 @@ const Header = () => {
                 <Title />
             </div>
             <div className="mx-auto max-w-7xl">
-                <Subreddits />
+                {/* <Subreddits /> */}
                 <form
                     className="relative max-w-lg mx-auto"
                     onSubmit={onSearchTermSubmit}>
