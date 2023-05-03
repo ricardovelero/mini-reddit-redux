@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Title } from "../../components/title/Title";
 import { DocumentMagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { setSearchTerm } from "../../app/redditSlice";
+import { Subreddits } from "../Subreddits/Subreddits";
 
 const Header = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -26,6 +27,9 @@ const Header = () => {
         <header className="bg-white mt-4">
             <div className="mx-auto max-w-7xl">
                 <Title />
+            </div>
+            <div className="mx-auto max-w-7xl">
+                <Subreddits />
                 <form
                     className="relative max-w-lg mx-auto"
                     onSubmit={onSearchTermSubmit}>
