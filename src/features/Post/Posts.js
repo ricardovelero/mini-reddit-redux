@@ -51,7 +51,7 @@ const Post = ({ post, onToggleComments }) => {
                     <img
                         src={post.url}
                         alt=""
-                        className="aspect-[3/2] w-full rounded-2xl object-cover"
+                        className="w-full rounded-2xl object-cover"
                     />
                 </p>
                 <div className="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
