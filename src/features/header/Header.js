@@ -29,7 +29,7 @@ const Header = () => {
                 <Title />
             </div>
             <div className="mx-auto max-w-7xl">
-                {/* <Subreddits /> */}
+                <Subreddits />
                 <form
                     className="relative max-w-lg mx-auto"
                     onSubmit={onSearchTermSubmit}>
@@ -43,10 +43,10 @@ const Header = () => {
                         type="text"
                         name="search"
                         id="search"
-                        placeholder="search posts"
+                        placeholder="search in selected subreddit posts"
                         value={searchValue}
                         onChange={onSearchTermChange}
-                        aria-label="Search posts"
+                        aria-label="search in selected subreddit posts"
                     />
                     <button
                         type="submit"
