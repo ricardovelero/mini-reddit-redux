@@ -29,6 +29,8 @@ const subRedditSlice = createSlice({
 export const { getSubredditsSuccess, getSubredditsFailed, startGetSubreddits } =
     subRedditSlice.actions;
 
+export default subRedditSlice.reducer;
+
 export const fetchSubreddits = () => async (dispatch) => {
     try {
         dispatch(startGetSubreddits());
@@ -39,6 +41,4 @@ export const fetchSubreddits = () => async (dispatch) => {
     }
 };
 
-export default subRedditSlice.reducer;
-
-export const selectSubreddits = (state) => state.subreddits.subreddits;
+export const selectSubreddits = (state) => state.subReddits.subreddits;
