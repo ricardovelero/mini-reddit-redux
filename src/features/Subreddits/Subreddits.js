@@ -37,10 +37,10 @@ export const Subreddits = () => {
     };
 
     return (
-        <div className="ml-7 mb-7">
+        <div className="relative max-w-lg mx-auto mb-7">
             <Combobox value={selectedSubreddit} onChange={handleChange}>
-                <Combobox.Label className="block text-sm font-medium leading-6 text-gray-900">
-                    Select Subreddit:
+                <Combobox.Label className="absolute z-10 -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">
+                    Select Subreddit
                 </Combobox.Label>
                 <div className="relative mt-1">
                     <Combobox.Input
@@ -85,7 +85,7 @@ export const Subreddits = () => {
                                                     <img
                                                         src={
                                                             subreddit.icon_img ||
-                                                            `https://api.adorable.io/avatars/25/${subreddit.display_name}`
+                                                            `https://api.dicebear.com/6.x/personas/svg?seed=${subreddit.display_name}`
                                                         }
                                                         alt=""
                                                         className="h-6 w-6 flex-shrink-0 rounded-full"
